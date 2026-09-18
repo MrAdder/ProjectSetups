@@ -13,7 +13,7 @@
     .gitignore files are always merged (missing lines appended), never overwritten.
     Tokens replaced in file contents and paths:
       {{NAME}} {{SLUG}} {{PKG}} {{YEAR}} {{AUTHOR}} {{DESCRIPTION}}
-    {{RULES}} expands to shared/security-and-speed.md (the universal security + speed rules).
+    {{RULES}} expands to shared/standards.md (universal security, speed and professional-standards rules).
 
 .EXAMPLE
     .\New-Project.ps1 -List
@@ -40,7 +40,7 @@ param(
 $ErrorActionPreference = 'Stop'
 $templatesDir = Join-Path $PSScriptRoot 'templates'
 $commonDir = Join-Path $PSScriptRoot 'common'
-$rulesFile = Join-Path (Join-Path $PSScriptRoot 'shared') 'security-and-speed.md'
+$rulesFile = Join-Path (Join-Path $PSScriptRoot 'shared') 'standards.md'
 $utf8 = New-Object System.Text.UTF8Encoding($false)
 
 function Get-TemplateManifest([string]$Dir) {

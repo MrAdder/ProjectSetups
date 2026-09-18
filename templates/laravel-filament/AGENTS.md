@@ -19,12 +19,13 @@ Laravel + Filament admin panel (`/admin`), Vite + Tailwind for the front end.
 
 {{RULES}}
 
-## This stack: security and speed
+## This stack
 
 - Production needs `APP_DEBUG=false`, `APP_ENV=production` and a real `APP_KEY`. Never commit `.env`.
 - Implement `FilamentUser::canAccessPanel()` on the `User` model, and write a Policy for every model with a Filament resource so access is not open to every logged-in user.
 - Validate input with Form Requests or Filament form rules. Protect models with `$fillable` (never `$guarded = []`); use Eloquent or the query builder with bindings, never concatenated `DB::raw`.
 - Keep Blade escaping on (`{{ }}`); use `{!! !!}` only for content you have sanitized. Keep CSRF middleware enabled; rate-limit login and other sensitive routes.
-- Run `composer audit` and `npm audit` before releases.
+- CI runs `composer audit` on every push and weekly; run `npm audit` before releases.
 - Prevent N+1 queries: eager-load with `with()` (resources: `getEloquentQuery()`), and call `Model::preventLazyLoading(! app()->isProduction())` in `AppServiceProvider`. Index columns used in filters, sorts and searches, and paginate every table.
 - Queue slow work (mail, exports, API calls). In production run `php artisan optimize` and `php artisan filament:optimize` on deploy, and use Redis or database cache and sessions rather than files under load.
+- Log with `Log::` and context arrays, never personal data or secrets. Custom Blade views must meet WCAG 2.2 AA (semantic elements, labelled inputs, keyboard access, contrast); Filament's own components already do, so prefer them over hand-built markup.

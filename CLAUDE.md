@@ -1,2 +1,2 @@
 @AGENTS.md
-@shared/security-and-speed.md
+@shared/standards.md
