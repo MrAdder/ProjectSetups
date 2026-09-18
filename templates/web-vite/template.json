@@ -1,0 +1,11 @@
+{
+  "description": "Vite + TypeScript + Tailwind 4 static site/SPA. eslint, prettier, CI.",
+  "requires": ["node", "npm"],
+  "scaffold": [],
+  "install": [
+    "npm install --save-dev vite typescript tailwindcss '@tailwindcss/vite' eslint '@eslint/js' typescript-eslint prettier"
+  ],
+  "notes": [
+    "npm run dev to start the dev server; npm run build outputs to dist/."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "description": "Node 24 + TypeScript service/bot (Discord, Twitch, CLI). tsx, vitest, eslint, prettier, Docker, CI.",
+  "requires": ["node", "npm"],
+  "scaffold": [],
+  "install": [
+    "npm install --save-dev typescript tsx vitest eslint '@eslint/js' typescript-eslint prettier '@types/node'"
+  ],
+  "notes": [
+    "Add your client library, e.g. npm install discord.js or @twurple/auth @twurple/chat.",
+    "Copy .env.example to .env and fill in BOT_TOKEN, then npm run dev."
+  ]
+}

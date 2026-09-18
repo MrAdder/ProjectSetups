@@ -1,0 +1,18 @@
+{
+  "description": "Laravel + Filament admin panel with Vite/Tailwind. Scaffolded by composer create-project; adds Pint CI and Dependabot.",
+  "requires": ["php", "composer", "node", "npm"],
+  "scaffold": [
+    "composer create-project laravel/laravel . --no-interaction --prefer-dist"
+  ],
+  "install": [
+    "composer require filament/filament --no-interaction",
+    "php artisan filament:install --panels --no-interaction",
+    "php vendor/bin/pint",
+    "npm install"
+  ],
+  "notes": [
+    "Create an admin login: php artisan make:filament-user",
+    "Before production, implement Filament\\Models\\Contracts\\FilamentUser on the User model to restrict panel access.",
+    "Run: composer run dev"
+  ]
+}

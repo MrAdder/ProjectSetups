@@ -1,0 +1,13 @@
+{
+  "description": "Python 3.12+ app/bot (src layout). pyproject, venv, pytest, ruff, Docker, CI.",
+  "requires": ["python"],
+  "scaffold": [],
+  "install": [
+    "python -m venv .venv",
+    "& '{{VENV_PY}}' -m pip install --quiet --editable '.[dev]'"
+  ],
+  "notes": [
+    "Activate the venv: .venv\\Scripts\\Activate.ps1 (Windows) or source .venv/bin/activate.",
+    "Run with: python -m {{PKG}}   Test with: pytest   Lint with: ruff check ."
+  ]
+}

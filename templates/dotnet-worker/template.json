@@ -1,0 +1,18 @@
+{
+  "description": ".NET 10 worker service + xUnit tests in a solution. Central build props, Docker, CI.",
+  "requires": ["dotnet"],
+  "scaffold": [
+    "dotnet new sln --name {{NAME}}",
+    "dotnet new worker --name {{NAME}} --output src/{{NAME}}",
+    "dotnet new xunit --name {{NAME}}.Tests --output tests/{{NAME}}.Tests",
+    "dotnet sln add src/{{NAME}} tests/{{NAME}}.Tests",
+    "dotnet add tests/{{NAME}}.Tests reference src/{{NAME}}"
+  ],
+  "install": [
+    "dotnet build",
+    "dotnet test --no-build"
+  ],
+  "notes": [
+    "Run with: dotnet run --project src/{{NAME}}"
+  ]
+}
